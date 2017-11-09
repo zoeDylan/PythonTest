@@ -9,7 +9,8 @@ import hashlib
 
 filePath = './zoeModule/loadPage/'
 db = DB('loadPage')
-
+if not(os.path.exists(filePath)):
+    os.mkdir(filePath)
 """
     db：数据格式
     db.data = {
@@ -29,7 +30,7 @@ class LoadPage(object):
         md5.update(url.encode('utf-8'))
         self.__url = url
         self.__fileName = md5.hexdigest()
-        self.__path = filePath + self.__fileName+'.db.txt'
+        self.__path = filePath + self.__fileName + '.db.txt'
         self.__encode = encode
 
         # 有数据记录读取历史文件 没有则抓取

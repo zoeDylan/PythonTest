@@ -2,6 +2,9 @@
 
 import os
 import time
+filePath = './zoeModule/loadPage/'
+if not(os.path.exists(filePath)):
+    os.mkdir(filePath)
 
 
 class DbFile(object):
@@ -12,7 +15,7 @@ class DbFile(object):
     def __init__(self, name, dbType='dict'):
 
         # 文件路径、名称、类型、文件对象、是否可以保存、错误信息、数据
-        self.__path = './zoeModule/dbFileData/' + name + '.db.txt'
+        self.__path = filePath + name + '.db.txt'
         self.__name = name
         self.__type = dbType
         self.__fileExists = os.path.exists(self.__path)
