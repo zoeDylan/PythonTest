@@ -6,6 +6,7 @@ import time
 import random
 import chardet
 import hashlib
+import os
 
 filePath = './zoeModule/loadPage/'
 db = DB('loadPage')
